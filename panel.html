@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="AdminPanel/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="index.html" method="POST" class="News">
+        <div class="News_container">
+            <div class="News_title">
+                <p>Новости</p>
+            </div>
+
+            <div class="News_area">
+                <div class="News_block">
+                        <input class="Title" id="title" autocomplete="off" type="text" maxlength="30" placeholder="Заголовок"/>
+                        <div class="News_line"></div>
+                        <input type="text" class="Img" id="image" autocomplete="off" placeholder="Введите url картинки"/>
+                        <textarea name="Text" id="text" maxlength="500"></textarea>
+                </div>
+            </div>
+
+        </div>
+
+        <input type="submit" class="btn" value="Клик!" onclick="PressButton();"/>
+    </form>
+
+    <script>
+        function PressButton() {
+            var title = document.getElementById('title').value;
+            var text = document.getElementById('text').value;
+            var image = document.getElementById('image').value;
+
+            localStorage.setItem("TITLE", title);
+            localStorage.setItem("IMAGE", image);
+            localStorage.setItem("TEXT", text);
+
+            return false;
+        }
+    </script>
+
+</body>
+</html>
